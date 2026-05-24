@@ -59,7 +59,7 @@ export default function RootLayout({
       lang="en"
       className={`${sora.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-brand-bg text-brand-text">
+      <body className="min-h-full bg-brand-bg text-brand-text-body">
         <script
           type="application/ld+json"
           suppressHydrationWarning

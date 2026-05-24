@@ -35,7 +35,7 @@ export default function AboutPage() {
             { label: "Full API Access", desc: "Developer-first integration" },
           ].map((item) => (
             <div key={item.label} className="border border-brand-border bg-brand-panel p-6 text-center">
-              <p className="font-heading text-lg font-bold text-brand-accent">{item.label}</p>
+              <p className="font-heading text-lg font-bold text-brand-crimson">{item.label}</p>
               <p className="mt-2 text-sm">{item.desc}</p>
             </div>
           ))}

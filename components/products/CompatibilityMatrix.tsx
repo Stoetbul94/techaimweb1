@@ -9,8 +9,8 @@ export default function CompatibilityMatrix({ items }: CompatibilityMatrixProps)
     <div className="grid gap-3 sm:grid-cols-2">
       {items.map((item) => (
         <div key={item.label} className="border border-brand-border bg-brand-panel p-4">
-          <p className="text-xs uppercase tracking-wide text-brand-accent">{item.label}</p>
-          <p className="mt-2 font-mono text-sm text-white">{item.value}</p>
+          <p className="text-xs uppercase tracking-wide text-brand-crimson">{item.label}</p>
+          <p className="mt-2 font-mono text-sm text-brand-text-primary">{item.value}</p>
         </div>
       ))}
     </div>

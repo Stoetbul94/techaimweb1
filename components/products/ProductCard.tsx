@@ -9,9 +9,9 @@ interface ProductCardProps {
 
 export default function ProductCard({ product }: ProductCardProps) {
   return (
-    <article className="flex h-full flex-col border-t-2 border-brand-accent bg-brand-panel">
+    <article className="flex h-full flex-col border-t-2 border-brand-crimson bg-brand-panel">
       <div
-        className="aspect-video grid place-items-center border-b border-brand-border bg-[#0A0D14] text-sm text-brand-text"
+        className="aspect-video grid place-items-center border-b border-brand-border bg-brand-panel text-sm text-brand-text-body"
         aria-label={`${product.name} image placeholder`}
       >
         Product Image
@@ -23,12 +23,12 @@ export default function ProductCard({ product }: ProductCardProps) {
           </Badge>
           {product.distance && <Badge variant="outline">{product.distance}</Badge>}
         </div>
-        <h3 className="mt-4 font-heading text-2xl font-bold text-white">{product.name}</h3>
-        <p className="mt-1 text-sm text-brand-accent">{product.tagline}</p>
+        <h3 className="mt-4 font-heading text-2xl font-bold text-brand-text-primary">{product.name}</h3>
+        <p className="mt-1 text-sm text-brand-crimson">{product.tagline}</p>
         <p className="mt-3 flex-1 text-sm leading-7">{product.useCase}</p>
         <div className="mt-4 flex flex-wrap gap-2">
           {product.disciplines.map((d) => (
-            <span key={d} className="text-xs uppercase tracking-wide text-brand-text/70">
+            <span key={d} className="text-xs uppercase tracking-wide text-brand-text-body/70">
               {d}
             </span>
           ))}
@@ -37,7 +37,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           {product.specs.slice(0, 3).map((spec) => (
             <div key={spec.label} className="grid grid-cols-2 px-4 py-2 text-sm">
               <span>{spec.label}</span>
-              <span className="text-white">{spec.value}</span>
+              <span className="text-brand-text-primary">{spec.value}</span>
             </div>
           ))}
         </div>

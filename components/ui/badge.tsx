@@ -7,9 +7,10 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand-accent/15 text-brand-accent",
-        cta: "bg-brand-cta text-white",
-        outline: "border border-brand-border text-brand-text",
+        default: "bg-brand-crimson/15 text-brand-crimson",
+        signal: "bg-brand-signal text-brand-text-primary",
+        outline: "border border-brand-border text-brand-text-body",
+        telemetry: "bg-brand-telemetry/15 text-brand-telemetry",
         success: "bg-brand-success/15 text-brand-success",
       },
     },

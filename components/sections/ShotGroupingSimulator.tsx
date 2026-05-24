@@ -20,10 +20,10 @@ export default function ShotGroupingSimulator() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-120px" }}
         >
-          <p className="font-body text-xs uppercase tracking-[0.22em] text-brand-cyan">
+          <p className="font-body text-xs uppercase tracking-[0.22em] text-brand-crimson">
             Shot grouping simulator
           </p>
-          <h2 className="mt-5 font-heading text-4xl font-bold text-white md:text-5xl">
+          <h2 className="mt-5 font-heading text-4xl font-bold text-brand-text-primary md:text-5xl">
             See every group take shape in real time.
           </h2>
           <p className="mt-6 text-lg leading-8">
@@ -37,7 +37,7 @@ export default function ShotGroupingSimulator() {
               ["1.8mm", "MPI offset"],
             ].map(([value, label]) => (
               <div key={label} className="border border-brand-border bg-brand-panel p-4">
-                <p className="font-heading text-2xl font-bold text-brand-cyan">{value}</p>
+                <p className="font-heading text-2xl font-bold text-brand-telemetry">{value}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.14em]">{label}</p>
               </div>
             ))}
@@ -54,11 +54,11 @@ export default function ShotGroupingSimulator() {
         >
           <div className="flex items-center justify-between border-b border-brand-border pb-4">
             <div>
-              <p className="font-heading text-lg font-semibold text-white">Live Group Analysis</p>
-              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-brand-text">Target lane 04</p>
+              <p className="font-heading text-lg font-semibold text-brand-text-primary">Live Group Analysis</p>
+              <p className="mt-1 text-xs uppercase tracking-[0.18em] text-brand-text-body">Target lane 04</p>
             </div>
-            <div className="flex items-center gap-2 text-xs text-white">
-              <span className="h-2 w-2 rounded-full bg-brand-red" />
+            <div className="flex items-center gap-2 text-xs text-brand-text-primary">
+              <span className="h-2 w-2 rounded-full bg-brand-signal" />
               LIVE
             </div>
           </div>
@@ -73,12 +73,12 @@ export default function ShotGroupingSimulator() {
               <svg viewBox="0 0 100 100" className="h-full w-full drop-shadow-[0_0_35px_rgba(0,200,255,0.14)]">
                 <defs>
                   <radialGradient id="targetGlow" cx="50%" cy="50%" r="50%">
-                    <stop offset="0%" stopColor="#00C8FF" stopOpacity="0.18" />
-                    <stop offset="48%" stopColor="#111318" stopOpacity="0.7" />
+                    <stop offset="0%" stopColor="#A80038" stopOpacity="0.18" />
+                    <stop offset="48%" stopColor="#111111" stopOpacity="0.7" />
                     <stop offset="100%" stopColor="#050505" stopOpacity="1" />
                   </radialGradient>
                 </defs>
-                <rect x="1" y="1" width="98" height="98" fill="url(#targetGlow)" stroke="#2A3040" />
+                <rect x="1" y="1" width="98" height="98" fill="url(#targetGlow)" stroke="#333333" />
                 {[44, 36, 28, 20, 12, 5].map((radius) => (
                   <circle
                     key={radius}
@@ -86,18 +86,18 @@ export default function ShotGroupingSimulator() {
                     cy="50"
                     r={radius}
                     fill="none"
-                    stroke={radius <= 12 ? "#E8001E" : "#2A3040"}
+                    stroke={radius <= 12 ? "#BF1919" : "#333333"}
                     strokeWidth={radius === 5 ? 0.7 : 0.45}
                     opacity={radius <= 12 ? 0.9 : 1}
                   />
                 ))}
-                <path d="M50 4v92M4 50h92" stroke="#2A3040" strokeWidth="0.45" />
+                <path d="M50 4v92M4 50h92" stroke="#333333" strokeWidth="0.45" />
                 <motion.circle
                   cx="50.8"
                   cy="49.6"
                   r="7.4"
                   fill="none"
-                  stroke="#00C8FF"
+                  stroke="#A80038"
                   strokeWidth="0.8"
                   strokeDasharray="2 1.6"
                   initial={{ opacity: 0, scale: 0.75 }}
@@ -111,7 +111,7 @@ export default function ShotGroupingSimulator() {
                       cx={shot.x}
                       cy={shot.y}
                       r="1.45"
-                      fill="#00C8FF"
+                      fill="#A80038"
                       initial={{ opacity: 0, scale: 2.8 }}
                       whileInView={{ opacity: 1, scale: 1 }}
                       viewport={{ once: true }}
@@ -122,7 +122,7 @@ export default function ShotGroupingSimulator() {
                       cy={shot.y}
                       r="4"
                       fill="none"
-                      stroke="#00C8FF"
+                      stroke="#A80038"
                       initial={{ opacity: 0.75, scale: 0.2 }}
                       whileInView={{ opacity: 0, scale: 1.5 }}
                       viewport={{ once: true }}
@@ -131,7 +131,7 @@ export default function ShotGroupingSimulator() {
                     <motion.text
                       x={shot.x + 3}
                       y={shot.y - 2}
-                      fill="#8A9BB5"
+                      fill="#8B919A"
                       fontSize="3"
                       initial={{ opacity: 0, y: 2 }}
                       whileInView={{ opacity: index > 2 ? 1 : 0.65, y: 0 }}
@@ -154,7 +154,7 @@ export default function ShotGroupingSimulator() {
             ].map(([label, value]) => (
               <div key={label} className="border border-brand-border bg-brand-bg p-3">
                 <p className="text-[10px] uppercase tracking-[0.18em]">{label}</p>
-                <p className="mt-1 font-heading text-xl font-bold text-white">{value}</p>
+                <p className="mt-1 font-heading text-xl font-bold text-brand-text-primary">{value}</p>
               </div>
             ))}
           </div>

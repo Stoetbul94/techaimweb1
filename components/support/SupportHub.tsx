@@ -30,14 +30,14 @@ export default function SupportHub() {
           { label: "Video Tutorials", href: "#tutorials" },
           { label: "System Status", href: "#status" },
         ].map((link) => (
-          <a key={link.label} href={link.href} className="border border-brand-border bg-brand-panel p-5 transition hover:border-brand-accent">
-            <p className="font-heading font-semibold text-white">{link.label}</p>
+          <a key={link.label} href={link.href} className="border border-brand-border bg-brand-panel p-5 transition hover:border-brand-crimson">
+            <p className="font-heading font-semibold text-brand-text-primary">{link.label}</p>
           </a>
         ))}
       </div>
 
       <div id="status" className="border border-brand-border bg-brand-panel p-6">
-        <h2 className="font-heading text-xl font-bold text-white">System Status</h2>
+        <h2 className="font-heading text-xl font-bold text-brand-text-primary">System Status</h2>
         <div className="mt-4 space-y-3">
           {["Cloud Sync", "API", "Documentation Portal"].map((service) => (
             <div key={service} className="flex items-center justify-between border-b border-brand-border pb-3">
@@ -52,7 +52,7 @@ export default function SupportHub() {
       </div>
 
       <div id="faq">
-        <h2 className="font-heading text-2xl font-bold text-white">FAQ</h2>
+        <h2 className="font-heading text-2xl font-bold text-brand-text-primary">FAQ</h2>
         <Accordion type="single" collapsible className="mt-6">
           {faqs.map((faq, i) => (
             <AccordionItem key={faq.q} value={`faq-${i}`}>
@@ -64,12 +64,12 @@ export default function SupportHub() {
       </div>
 
       <div id="tutorials">
-        <h2 className="font-heading text-2xl font-bold text-white">Video Tutorials</h2>
+        <h2 className="font-heading text-2xl font-bold text-brand-text-primary">Video Tutorials</h2>
         <p className="mt-3 text-sm">Installation, calibration and software setup guides — coming soon.</p>
       </div>
 
       <div className="border border-brand-border bg-brand-panel p-6">
-        <h2 className="font-heading text-xl font-bold text-white">Submit Support Ticket</h2>
+        <h2 className="font-heading text-xl font-bold text-brand-text-primary">Submit Support Ticket</h2>
         <form action={handleSubmit} className="mt-6 grid gap-4 md:grid-cols-2">
           <Input name="name" placeholder="Full name" required aria-label="Full name" />
           <Input name="email" type="email" placeholder="Email" required aria-label="Email" />
@@ -80,15 +80,15 @@ export default function SupportHub() {
             placeholder="Describe your issue"
             required
             rows={5}
-            className="md:col-span-2 border border-brand-border bg-brand-bg px-4 py-3 text-sm text-white placeholder:text-brand-text/60 focus:outline-none focus:ring-2 focus:ring-brand-accent"
+            className="md:col-span-2 border border-brand-border bg-brand-bg px-4 py-3 text-sm text-brand-text-primary placeholder:text-brand-text-muted focus:outline-none focus:ring-2 focus:ring-brand-crimson"
             aria-label="Message"
           />
-          <button type="submit" className="bg-brand-cta px-8 py-3 font-heading text-sm font-semibold text-white md:col-span-2">
+          <button type="submit" className="bg-brand-crimson px-8 py-3 font-heading text-sm font-semibold text-brand-text-primary md:col-span-2">
             Submit Ticket
           </button>
         </form>
         {status === "success" && <p className="mt-4 text-sm text-brand-success">Ticket submitted successfully. We will respond within 1 business day.</p>}
-        {status === "error" && <p className="mt-4 text-sm text-brand-cta">Something went wrong. Please try again or contact us via WhatsApp.</p>}
+        {status === "error" && <p className="mt-4 text-sm text-brand-signal">Something went wrong. Please try again or contact us via WhatsApp.</p>}
       </div>
     </div>
   );

@@ -42,12 +42,12 @@ function Target({ phaseRef, opacity }: { phaseRef: React.MutableRefObject<Phase>
       <group ref={groupRef} visible={false}>
         <mesh rotation={[Math.PI / 2, 0, 0]}>
           <cylinderGeometry args={[2.2, 2.2, 0.08, 128]} />
-          <meshStandardMaterial color="#06080D" roughness={0.5} metalness={0.3} transparent opacity={opacity} />
+          <meshStandardMaterial color="#111111" roughness={0.5} metalness={0.3} transparent opacity={opacity} />
         </mesh>
         {[1.9, 1.5, 1.1, 0.7, 0.35].map((r, i) => (
           <mesh key={r} position={[0, 0, 0.05]}>
             <torusGeometry args={[r, 0.008, 12, 96]} />
-            <meshBasicMaterial color={i > 2 ? "#E8001E" : "#2A3040"} transparent opacity={opacity * 0.8} />
+            <meshBasicMaterial color={i > 2 ? "#BF1919" : "#333333"} transparent opacity={opacity * 0.8} />
           </mesh>
         ))}
       </group>
@@ -76,12 +76,12 @@ function DetectionRings({ active }: { active: boolean }) {
       {[0, 1, 2].map((i) => (
         <mesh key={i} rotation={[Math.PI / 2, 0, 0]}>
           <torusGeometry args={[0.3 + i * 0.15, 0.004, 8, 64]} />
-          <meshBasicMaterial color="#3B9EFF" transparent opacity={0.4} />
+          <meshBasicMaterial color="#3B82F6" transparent opacity={0.4} />
         </mesh>
       ))}
       <mesh position={[0.05, -0.08, 0.1]}>
         <sphereGeometry args={[0.05, 16, 16]} />
-        <meshStandardMaterial color="#3B9EFF" emissive="#3B9EFF" emissiveIntensity={2} />
+        <meshStandardMaterial color="#3B82F6" emissive="#3B82F6" emissiveIntensity={2} />
       </mesh>
     </group>
   );
@@ -145,8 +145,8 @@ function Scene({ onPhaseChange }: { onPhaseChange: (p: Phase) => void }) {
     <>
       <ambientLight intensity={0.4} />
       <spotLight position={[0, 5, 5]} angle={0.4} penumbra={0.8} intensity={30} color="#ffffff" />
-      <pointLight position={[3, 2, 4]} intensity={15} color="#3B9EFF" />
-      <Sparkles count={80} scale={8} size={1.5} speed={0.3} opacity={0.4} color="#3B9EFF" />
+      <pointLight position={[3, 2, 4]} intensity={15} color="#3B82F6" />
+      <Sparkles count={80} scale={8} size={1.5} speed={0.3} opacity={0.4} color="#3B82F6" />
       <fog attach="fog" args={["#050505", 4, 14]} />
       <Bullet phaseRef={phaseRef} />
       <Target phaseRef={phaseRef} opacity={targetOpacity} />
@@ -168,16 +168,16 @@ export default function BulletHeroScene() {
       </Canvas>
       {showOverlay && coords && (
         <div className="pointer-events-none absolute inset-0">
-          <div className="absolute left-[58%] top-[48%] font-mono text-[10px] text-brand-accent">
+          <div className="absolute left-[58%] top-[48%] font-mono text-[10px] text-brand-telemetry">
             <p>X: {coords.x.toFixed(2)}mm</p>
             <p>Y: {coords.y.toFixed(2)}mm</p>
-            <p className="mt-1 text-lg font-bold text-white">{coords.score.toFixed(1)}</p>
+            <p className="mt-1 text-lg font-bold text-brand-text-primary">{coords.score.toFixed(1)}</p>
           </div>
           {phase === "data" && (
             <div className="absolute bottom-4 right-4 border border-brand-border bg-brand-panel/90 p-3 font-mono text-xs backdrop-blur-sm">
-              <p className="text-brand-accent">LIVE SCORING</p>
-              <p className="mt-1 text-white">Shot 12 · Series 2</p>
-              <p className="text-brand-text">MR: 2.1mm · ES: 4.8mm</p>
+              <p className="text-brand-telemetry">LIVE SCORING</p>
+              <p className="mt-1 text-brand-text-primary">Shot 12 · Series 2</p>
+              <p className="text-brand-text-body">MR: 2.1mm · ES: 4.8mm</p>
             </div>
           )}
         </div>

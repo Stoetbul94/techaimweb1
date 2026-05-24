@@ -30,13 +30,13 @@ function Logo() {
         animate={{ rotate: 360 }}
         transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
       >
-        <circle cx="14" cy="14" r="10" stroke="#3B9EFF" strokeWidth="1.5" />
-        <circle cx="14" cy="14" r="4" stroke="#3B9EFF" strokeWidth="1" opacity="0.75" />
-        <path d="M14 1v7M14 20v7M1 14h7M20 14h7" stroke="#3B9EFF" strokeWidth="1.4" />
+        <circle cx="14" cy="14" r="10" stroke="#A80038" strokeWidth="1.5" />
+        <circle cx="14" cy="14" r="4" stroke="#A80038" strokeWidth="1" opacity="0.75" />
+        <path d="M14 1v7M14 20v7M1 14h7M20 14h7" stroke="#A80038" strokeWidth="1.4" />
       </motion.svg>
-      <span className="font-heading text-[18px] font-bold tracking-wide text-white lg:text-[20px]">
-        TECH<span className="text-brand-accent"> AIM</span>
-        <span className="ml-1 text-brand-text/70">ARMS</span>
+      <span className="font-heading text-[18px] font-bold tracking-wide text-brand-text-primary lg:text-[20px]">
+        TECH<span className="text-brand-crimson"> AIM</span>
+        <span className="ml-1 text-brand-text-body/70">ARMS</span>
       </span>
     </Link>
   );
@@ -62,19 +62,19 @@ export default function Navbar() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="group relative py-2 font-body text-[12px] uppercase tracking-[0.08em] text-brand-text transition hover:text-white"
+                className="group relative py-2 font-body text-[12px] uppercase tracking-[0.08em] text-brand-text-body transition hover:text-brand-text-primary"
               >
                 {link.label}
                 {active && (
-                  <motion.span layoutId="nav-underline" className="absolute inset-x-0 -bottom-1 h-px bg-brand-accent" />
+                  <motion.span layoutId="nav-underline" className="absolute inset-x-0 -bottom-1 h-px bg-brand-crimson" />
                 )}
-                <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-brand-accent transition group-hover:scale-x-100" />
+                <span className="absolute inset-x-0 -bottom-1 h-px origin-left scale-x-0 bg-brand-crimson transition group-hover:scale-x-100" />
               </Link>
             );
           })}
           <Link
             href="/developers"
-            className="py-2 font-body text-[12px] uppercase tracking-[0.08em] text-brand-accent-dim transition hover:text-brand-accent"
+            className="py-2 font-body text-[12px] uppercase tracking-[0.08em] text-brand-crimson transition hover:text-brand-crimson"
           >
             API
           </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/contact?intent=demo"
-            className="border border-brand-accent px-5 py-2.5 font-heading text-sm font-semibold text-brand-accent transition hover:bg-brand-accent hover:text-[#050505]"
+            className="border border-brand-crimson px-5 py-2.5 font-heading text-sm font-semibold text-brand-crimson transition hover:bg-brand-crimson hover:text-brand-text-primary"
           >
             Book a Demo
           </Link>
@@ -90,7 +90,7 @@ export default function Navbar() {
             href={whatsappLink("Hi, I'm interested in TECH AIM ARMS")}
             target="_blank"
             rel="noopener noreferrer"
-            className="grid h-11 w-11 place-items-center bg-brand-cta text-white transition hover:scale-105"
+            className="grid h-11 w-11 place-items-center bg-brand-crimson text-brand-text-primary transition hover:scale-105"
             aria-label="Chat on WhatsApp"
           >
             <MessageCircle size={20} />
@@ -99,7 +99,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          className="grid h-11 w-11 place-items-center border border-brand-border text-white xl:hidden"
+          className="grid h-11 w-11 place-items-center border border-brand-border text-brand-text-primary xl:hidden"
           aria-label="Toggle navigation menu"
           aria-expanded={open}
         >
@@ -120,18 +120,18 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="font-heading text-2xl font-semibold text-white"
+                  className="font-heading text-2xl font-semibold text-brand-text-primary"
                 >
                   {link.label}
                 </Link>
               ))}
-              <Link href="/developers" onClick={() => setOpen(false)} className="font-heading text-2xl font-semibold text-brand-accent">
+              <Link href="/developers" onClick={() => setOpen(false)} className="font-heading text-2xl font-semibold text-brand-crimson">
                 Developers / API
               </Link>
               <Link
                 href="/contact?intent=demo"
                 onClick={() => setOpen(false)}
-                className="mt-3 bg-brand-accent px-5 py-3 text-center font-heading font-semibold text-[#050505]"
+                className="mt-3 bg-brand-crimson px-5 py-3 text-center font-heading font-semibold text-brand-text-primary"
               >
                 Book a Demo
               </Link>

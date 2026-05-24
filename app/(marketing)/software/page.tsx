@@ -21,12 +21,12 @@ export default function SoftwarePage() {
         <FeatureTabs />
         <div className="mt-12 border border-brand-border bg-brand-panel p-8 md:flex md:items-center md:justify-between">
           <div>
-            <h3 className="font-heading text-xl font-bold text-white">Developer API</h3>
+            <h3 className="font-heading text-xl font-bold text-brand-text-primary">Developer API</h3>
             <p className="mt-2 max-w-xl text-sm leading-7">
               Integrate TECH AIM ARMS with your existing systems via REST API and WebSocket feeds.
             </p>
           </div>
-          <Link href="/developers" className="mt-6 inline-block border border-brand-accent px-6 py-3 font-heading text-sm font-semibold text-brand-accent md:mt-0">
+          <Link href="/developers" className="mt-6 inline-block border border-brand-crimson px-6 py-3 font-heading text-sm font-semibold text-brand-crimson md:mt-0">
             View API Documentation
           </Link>
         </div>

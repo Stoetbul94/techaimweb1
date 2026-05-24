@@ -54,11 +54,11 @@ export default function AnalyticsDemo() {
         <div className="grid gap-4 md:grid-cols-2">
           {athleteComparison.map((a) => (
             <div key={a.name} className="border border-brand-border bg-brand-panel p-6">
-              <h4 className="font-heading text-lg font-bold text-white">{a.name}</h4>
+              <h4 className="font-heading text-lg font-bold text-brand-text-primary">{a.name}</h4>
               <div className="mt-4 space-y-2 font-mono text-sm">
-                <p>Avg Score: <span className="text-brand-accent">{a.avgScore}</span></p>
-                <p>Mean Radius: <span className="text-brand-accent">{a.mr}mm</span></p>
-                <p>Sessions: <span className="text-brand-accent">{a.sessions}</span></p>
+                <p>Avg Score: <span className="text-brand-telemetry">{a.avgScore}</span></p>
+                <p>Mean Radius: <span className="text-brand-telemetry">{a.mr}mm</span></p>
+                <p>Sessions: <span className="text-brand-telemetry">{a.sessions}</span></p>
               </div>
             </div>
           ))}
@@ -71,8 +71,8 @@ export default function AnalyticsDemo() {
 function Stat({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex justify-between border-b border-brand-border pb-3">
-      <span className="text-sm text-brand-text">{label}</span>
-      <span className="font-mono text-white">{value}</span>
+      <span className="text-sm text-brand-text-body">{label}</span>
+      <span className="font-mono text-brand-text-primary">{value}</span>
     </div>
   );
 }

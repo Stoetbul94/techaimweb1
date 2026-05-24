@@ -5,11 +5,15 @@ Tech stack: Next.js 15, TypeScript, TailwindCSS, Framer Motion, GSAP, Three.js /
 Brand rules:
 - Company name: TECH AIM ARMS
 - Positioning: Analytics platform first, hardware second
-- Background: #050505 primary, #111318 panels, #0A0C10 footer
-- Accent: #3B9EFF (primary data accent), #00C8FF (telemetry), #E8001E (CTAs)
-- Text: #FFFFFF headings, #8A9BB5 body, JetBrains Mono for data/code
+- Background: #050505
+- Surfaces: #111111 (panel), #1A1A1A (elevated), #232323 (secondary)
+- Brand Crimson #A80038: buttons, links, active nav, CTAs, highlights
+- Signal Red #BF1919: alerts, destructive, scoring rings
+- Telemetry Blue #3B82F6: charts, analytics, telemetry overlays, live data only
+- Text: #F5F5F5 headings, #C7CBD1 body, #8B919A muted; JetBrains Mono for data/code
 - Fonts: Sora headings, Inter body
 - Aesthetic: cinematic engineering UI, instrumentation overlays, angular geometry
 - Avoid rounded-xl buttons, gaming aesthetics, military/tactical themes
+- Maintain WCAG AA contrast (crimson CTAs use #F5F5F5 foreground)
 
 Always use TypeScript interfaces, cn() utility, Framer Motion for UI animation, GSAP for scroll choreography, mobile-first responsive design.

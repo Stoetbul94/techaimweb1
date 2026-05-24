@@ -15,13 +15,13 @@ export default function ApiExplorer() {
 
   return (
     <div className="mt-12 border border-brand-border bg-brand-panel p-6">
-      <h3 className="font-heading text-xl font-bold text-white">Interactive API Explorer</h3>
-      <p className="mt-2 text-sm text-brand-text">Try endpoints with mock responses (sandbox coming soon)</p>
+      <h3 className="font-heading text-xl font-bold text-brand-text-primary">Interactive API Explorer</h3>
+      <p className="mt-2 text-sm text-brand-text-body">Try endpoints with mock responses (sandbox coming soon)</p>
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <div>
-          <label className="text-xs uppercase tracking-wide text-brand-accent">Endpoint</label>
+          <label className="text-xs uppercase tracking-wide text-brand-crimson">Endpoint</label>
           <select
-            className="mt-2 w-full border border-brand-border bg-brand-bg px-3 py-2 font-mono text-sm text-white"
+            className="mt-2 w-full border border-brand-border bg-brand-bg px-3 py-2 font-mono text-sm text-brand-text-primary"
             value={`${method}:${selectedPath}`}
             onChange={(e) => {
               const [m, p] = e.target.value.split(":");
@@ -38,14 +38,14 @@ export default function ApiExplorer() {
           <button
             type="button"
             onClick={tryRequest}
-            className="mt-4 bg-brand-accent px-6 py-2 font-heading text-sm font-semibold text-[#050505]"
+            className="mt-4 bg-brand-crimson px-6 py-2 font-heading text-sm font-semibold text-brand-text-primary"
           >
             Send Request
           </button>
         </div>
         <div>
-          <label className="text-xs uppercase tracking-wide text-brand-accent">Response</label>
-          <pre className="mt-2 max-h-64 overflow-auto border border-brand-border bg-brand-bg p-4 font-mono text-xs text-brand-text-bright">
+          <label className="text-xs uppercase tracking-wide text-brand-crimson">Response</label>
+          <pre className="mt-2 max-h-64 overflow-auto border border-brand-border bg-brand-bg p-4 font-mono text-xs text-brand-text-primary">
             {response || "Click Send Request to see mock response"}
           </pre>
         </div>

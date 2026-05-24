@@ -24,8 +24,8 @@ export default function StickySectionNav({ items, activeId, className }: StickyS
               className={cn(
                 "block border-l-2 py-2 pl-4 font-body text-xs uppercase tracking-[0.08em] transition",
                 activeId === item.id
-                  ? "border-brand-accent text-brand-accent"
-                  : "border-transparent text-brand-text hover:border-brand-border hover:text-white",
+                  ? "border-brand-crimson text-brand-crimson"
+                  : "border-transparent text-brand-text-body hover:border-brand-border hover:text-brand-text-primary",
               )}
             >
               {item.label}

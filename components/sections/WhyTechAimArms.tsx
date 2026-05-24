@@ -31,8 +31,8 @@ export default function WhyTechAimArms() {
   return (
     <section className="bg-brand-bg py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="font-body text-xs uppercase tracking-[0.2em] text-brand-accent">Why TECH AIM ARMS</p>
-        <h2 className="mt-4 font-heading text-[clamp(2rem,4vw,3rem)] font-bold text-white">
+        <p className="font-body text-xs uppercase tracking-[0.2em] text-brand-crimson">Why TECH AIM ARMS</p>
+        <h2 className="mt-4 font-heading text-[clamp(2rem,4vw,3rem)] font-bold text-brand-text-primary">
           Built for performance, not just scoring
         </h2>
         <motion.div
@@ -47,10 +47,10 @@ export default function WhyTechAimArms() {
               key={pillar.title}
               variants={fadeUp}
               whileHover={{ y: -4 }}
-              className="group border border-brand-border bg-brand-panel p-6 transition-colors hover:border-brand-accent/50"
+              className="group border border-brand-border bg-brand-panel p-6 transition-colors hover:border-brand-crimson/50"
             >
-              <pillar.icon className="h-8 w-8 text-brand-accent transition-transform group-hover:scale-110" />
-              <h3 className="mt-5 font-heading text-xl font-bold text-white">{pillar.title}</h3>
+              <pillar.icon className="h-8 w-8 text-brand-crimson transition-transform group-hover:scale-110" />
+              <h3 className="mt-5 font-heading text-xl font-bold text-brand-text-primary">{pillar.title}</h3>
               <p className="mt-3 text-sm leading-7">{pillar.description}</p>
             </motion.div>
           ))}

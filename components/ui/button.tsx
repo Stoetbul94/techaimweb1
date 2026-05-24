@@ -4,15 +4,17 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 font-heading text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent disabled:pointer-events-none disabled:opacity-50",
+  "inline-flex items-center justify-center gap-2 font-heading text-sm font-semibold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-crimson focus-visible:ring-offset-2 focus-visible:ring-offset-brand-bg disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
-        default: "bg-brand-accent px-8 py-3 text-[#050505] hover:bg-brand-accent/90",
-        outline: "border border-brand-accent px-8 py-3 text-brand-accent hover:bg-brand-accent hover:text-[#050505]",
-        ghost: "text-brand-text hover:text-white",
-        cta: "bg-brand-cta px-8 py-3 text-white hover:bg-brand-cta/90",
-        secondary: "border border-white px-8 py-3 text-white hover:bg-white hover:text-black",
+        default: "bg-brand-crimson px-8 py-3 text-brand-text-primary hover:bg-brand-crimson/90",
+        outline:
+          "border border-brand-crimson px-8 py-3 text-brand-crimson hover:bg-brand-crimson hover:text-brand-text-primary",
+        ghost: "text-brand-text-body hover:text-brand-text-primary",
+        cta: "bg-brand-crimson px-8 py-3 text-brand-text-primary hover:bg-brand-crimson/90",
+        secondary:
+          "border border-brand-text-primary px-8 py-3 text-brand-text-primary hover:bg-brand-text-primary hover:text-brand-bg",
       },
       size: {
         default: "px-8 py-3",
