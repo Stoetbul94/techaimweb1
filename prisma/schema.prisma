@@ -1,0 +1,65 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model DocumentCategory {
+  id        String     @id @default(cuid())
+  slug      String     @unique
+  name      String
+  sortOrder Int        @default(0)
+  documents Document[]
+}
+
+model Document {
+  id            String           @id @default(cuid())
+  slug          String           @unique
+  title         String
+  description   String?
+  version       String
+  releaseDate   DateTime
+  fileUrl       String
+  fileSize      Int
+  mimeType      String
+  categoryId    String
+  category      DocumentCategory @relation(fields: [categoryId], references: [id])
+  productSlugs  String[]
+  tags          String[]
+  language      String           @default("en")
+  published     Boolean          @default(true)
+  downloadCount Int              @default(0)
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+
+  @@index([categoryId])
+  @@index([published, releaseDate])
+}
+
+model SupportArticle {
+  id           String   @id @default(cuid())
+  slug         String   @unique
+  title        String
+  content      String
+  category     String
+  productSlugs String[]
+  published    Boolean  @default(true)
+  views        Int      @default(0)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model SupportTicket {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  company   String?
+  subject   String
+  message   String
+  product   String?
+  status    String   @default("open")
+  createdAt DateTime @default(now())
+}

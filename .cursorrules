@@ -1,0 +1,15 @@
+You are building the TECH AIM ARMS website — a precision measurement and performance analytics platform for shooting sports.
+
+Tech stack: Next.js 15, TypeScript, TailwindCSS, Framer Motion, GSAP, Three.js / React Three Fiber, shadcn/ui, Recharts.
+
+Brand rules:
+- Company name: TECH AIM ARMS
+- Positioning: Analytics platform first, hardware second
+- Background: #050505 primary, #111318 panels, #0A0C10 footer
+- Accent: #3B9EFF (primary data accent), #00C8FF (telemetry), #E8001E (CTAs)
+- Text: #FFFFFF headings, #8A9BB5 body, JetBrains Mono for data/code
+- Fonts: Sora headings, Inter body
+- Aesthetic: cinematic engineering UI, instrumentation overlays, angular geometry
+- Avoid rounded-xl buttons, gaming aesthetics, military/tactical themes
+
+Always use TypeScript interfaces, cn() utility, Framer Motion for UI animation, GSAP for scroll choreography, mobile-first responsive design.
