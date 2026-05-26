@@ -7,7 +7,7 @@ import { submitSupportTicket } from "@/app/actions/support";
 
 const faqs = [
   { q: "How quickly are shots detected?", a: "Shots are registered in under 2ms with competition-grade accuracy on all approved systems." },
-  { q: "Is the system ISSF approved?", a: "Yes. Match 10 and Match 50 are ISSF approved for official competition use." },
+  { q: "Is the system ISSF approved?", a: "No. TechAim systems are designed for ISSF-aligned training workflows, but formal ISSF approval is not currently claimed." },
   { q: "Can I integrate with third-party software?", a: "Yes. Our REST API and WebSocket feeds allow integration with range management and scoring systems." },
   { q: "What network requirements are needed?", a: "Ethernet is recommended for outdoor ranges. Bluetooth is supported for indoor 10m lanes via the control hub." },
   { q: "How do I update firmware?", a: "Download the latest firmware from the Downloads page and follow the update guide in the user manual." },

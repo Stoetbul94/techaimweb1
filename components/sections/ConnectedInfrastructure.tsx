@@ -15,7 +15,7 @@ const nodes = [
 const stats = [
   ["< 2ms", "Scoring latency"],
   ["0.001mm", "MPI precision"],
-  ["ISSF Approved", "Certification standard"],
+  ["ISSF-aligned", "Rules-aware workflows"],
 ];
 
 export default function ConnectedInfrastructure() {

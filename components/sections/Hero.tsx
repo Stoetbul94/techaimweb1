@@ -26,18 +26,20 @@ export default function Hero() {
           backgroundSize: "40px 40px",
         }}
       />
-      <div className="relative mx-auto grid min-h-screen max-w-7xl items-center gap-12 px-4 pt-28 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
-        <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.15 }} className="relative z-10 max-w-3xl">
+      <div className="relative mx-auto grid min-h-screen min-w-0 max-w-7xl items-center gap-12 overflow-hidden px-4 pt-28 sm:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:px-8">
+        <motion.div initial="hidden" animate="visible" transition={{ staggerChildren: 0.15 }} className="relative z-10 w-full min-w-0 max-w-[21.5rem] sm:max-w-3xl">
           <motion.p variants={fadeUp} className="font-body text-[11px] uppercase tracking-[0.2em] text-brand-crimson">
             Precision measurement platform
           </motion.p>
           <motion.h1
             variants={fadeUp}
-            className="mt-6 font-heading text-[clamp(2.75rem,7vw,5.5rem)] font-bold leading-[0.98] text-brand-text-primary"
+            className="mt-6 max-w-full text-wrap font-heading text-[2.35rem] font-bold leading-[1.02] text-brand-text-primary sm:text-[clamp(2.75rem,7vw,5.5rem)] sm:leading-[0.98]"
           >
-            Precision Electronic Target Systems
+            <span className="block">Precision</span>
+            <span className="block">Electronic</span>
+            <span className="block">Target Systems</span>
           </motion.h1>
-          <motion.p variants={fadeUp} className="mt-8 max-w-xl text-lg leading-8 text-brand-text-body">
+          <motion.p variants={fadeUp} className="mt-8 max-w-full text-base leading-7 text-brand-text-body sm:max-w-xl sm:text-lg sm:leading-8">
             Competition-grade shot detection, advanced analytics and instant feedback engineered for modern shooting
             sports.
           </motion.p>
@@ -55,7 +57,7 @@ export default function Hero() {
               View Analytics Platform
             </Link>
           </motion.div>
-          <motion.p variants={fadeUp} className="mt-8 font-mono text-xs text-brand-text-muted">
+          <motion.p variants={fadeUp} className="mt-8 max-w-full font-mono text-xs leading-5 text-brand-text-muted">
             Shot Detected → Measured → Analysed → Visualised → Improved Performance
           </motion.p>
         </motion.div>
@@ -63,7 +65,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: 60 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-          className="relative z-10 lg:min-h-[560px]"
+          className="relative z-10 min-w-0 lg:min-h-[560px]"
         >
           <BulletHeroScene />
         </motion.div>

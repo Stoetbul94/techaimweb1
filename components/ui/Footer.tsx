@@ -63,7 +63,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 border-t border-brand-border pt-6 text-sm text-brand-text-muted/90 md:flex md:items-center md:justify-between">
           <p>Copyright 2026 TECH AIM ARMS. All rights reserved.</p>
-          <p className="mt-3 text-brand-crimson md:mt-0">ISSF Approved Electronic Scoring</p>
+          <p className="mt-3 text-brand-crimson md:mt-0">ISSF-aligned scoring workflows</p>
         </div>
       </div>
     </footer>

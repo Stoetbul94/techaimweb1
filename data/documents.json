@@ -91,17 +91,17 @@
     "tags": ["cad", "mounting"]
   },
   {
-    "slug": "issf-certificate",
-    "title": "ISSF Approval Certificate",
-    "description": "Official ISSF approval documentation",
+    "slug": "standards-reference",
+    "title": "Standards Reference",
+    "description": "Reference notes for ISSF-aligned scoring workflows",
     "version": "1.0.0",
     "releaseDate": "2025-09-20",
-    "fileUrl": "/downloads/issf-certificate.pdf",
+    "fileUrl": "/downloads/standards-reference.pdf",
     "fileSize": 524288,
     "mimeType": "application/pdf",
-    "category": "certificates",
+    "category": "standards",
     "productSlugs": ["match-10", "match-50"],
-    "tags": ["issf", "certificate"]
+    "tags": ["issf", "standards"]
   },
   {
     "slug": "api-reference",

@@ -44,18 +44,18 @@ export default function TechnologyPage() {
         </div>
         <motion.section initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 grid gap-8 border border-brand-border bg-brand-panel p-8 lg:grid-cols-[1fr_260px]">
           <div>
-            <h2 className="font-heading text-4xl font-bold text-brand-text-primary">Built for Olympic Standards</h2>
+            <h2 className="font-heading text-4xl font-bold text-brand-text-primary">Built for Precision Standards</h2>
             <p className="mt-5 max-w-3xl text-lg leading-8">
-              ISSF approval signals that a target system has been tested for accuracy, consistency,
-              scoring integrity, and competition-readiness. For buyers, it turns precision from a claim
-              into an operational standard.
+              TechAim is designed around rules-aware scoring workflows, consistent measurement,
+              and competition-grade operating discipline. Formal third-party certification should be
+              presented only once the approval process is complete.
             </p>
           </div>
           <svg viewBox="0 0 220 220" className="mx-auto h-56">
             <circle cx="110" cy="110" r="94" fill="#0A0C10" stroke="#A80038" strokeWidth="3" />
             <circle cx="110" cy="110" r="66" fill="none" stroke="#333333" />
-            <text x="110" y="100" textAnchor="middle" fill="#FFFFFF" fontSize="36" fontWeight="700">ISSF</text>
-            <text x="110" y="130" textAnchor="middle" fill="#A80038" fontSize="16">APPROVED</text>
+            <text x="110" y="100" textAnchor="middle" fill="#FFFFFF" fontSize="28" fontWeight="700">RULES</text>
+            <text x="110" y="130" textAnchor="middle" fill="#A80038" fontSize="16">ALIGNED</text>
           </svg>
         </motion.section>
         <motion.section initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="mt-16 overflow-x-auto">

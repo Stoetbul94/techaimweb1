@@ -48,7 +48,7 @@ export const products: Product[] = [
       { label: "Discipline", value: "Air pistol and air rifle" },
       { label: "Detection", value: "Instant shot registration" },
       { label: "Accuracy", value: "Competition-grade precision" },
-      { label: "ISSF Status", value: "ISSF Approved" },
+      { label: "ISSF Status", value: "Not currently ISSF approved" },
       { label: "Communication", value: "Bluetooth + Ethernet" },
     ],
     features: [
@@ -69,7 +69,7 @@ export const products: Product[] = [
       "Network: Ethernet or Bluetooth to hub",
     ],
     faq: [
-      { question: "Is Match 10 ISSF approved?", answer: "Yes. Match 10 is ISSF approved for official competition use in 10m disciplines." },
+      { question: "Is Match 10 ISSF approved?", answer: "No. Match 10 is designed for ISSF-aligned training and club use while formal approval remains a future certification step." },
       { question: "Can I integrate with existing range software?", answer: "Yes. Match 10 exposes a REST API and WebSocket feed for third-party integration." },
     ],
     relatedSlugs: ["match-50", "elite"],
@@ -90,7 +90,7 @@ export const products: Product[] = [
       { label: "Discipline", value: "Small-bore rifle" },
       { label: "Detection", value: "Instant shot registration" },
       { label: "Accuracy", value: "Sub-millimetre precision" },
-      { label: "ISSF Status", value: "ISSF Approved" },
+      { label: "ISSF Status", value: "Not currently ISSF approved" },
       { label: "Communication", value: "Ethernet + control hub" },
     ],
     features: [

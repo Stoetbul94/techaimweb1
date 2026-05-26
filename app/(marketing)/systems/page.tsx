@@ -14,7 +14,7 @@ const currentProducts = [
     specs: [
       ["Distance", "10m"],
       ["Discipline", "Air pistol and air rifle"],
-      ["ISSF Status", "ISSF Approved"],
+      ["ISSF Status", "Not currently ISSF approved"],
       ["Communication", "Bluetooth + Ethernet"],
     ],
   },
@@ -25,7 +25,7 @@ const currentProducts = [
     specs: [
       ["Distance", "50m"],
       ["Discipline", "Small-bore rifle"],
-      ["ISSF Status", "ISSF Approved"],
+      ["ISSF Status", "Not currently ISSF approved"],
       ["Communication", "Ethernet + control hub"],
     ],
   },

@@ -30,7 +30,7 @@ export default function AboutPage() {
         </div>
         <div className="mt-16 grid gap-6 sm:grid-cols-3">
           {[
-            { label: "ISSF Approved", desc: "Official competition certification" },
+            { label: "ISSF-aligned", desc: "Rules-aware training workflows" },
             { label: "Sub-ms Detection", desc: "Instant shot registration" },
             { label: "Full API Access", desc: "Developer-first integration" },
           ].map((item) => (
