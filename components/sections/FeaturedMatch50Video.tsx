@@ -6,8 +6,10 @@ import { Button } from "@/components/ui/button";
 import { videos } from "@/lib/assets";
 import { images } from "@/lib/imageRegistry";
 import { fadeUp } from "@/lib/motion";
+import { cn } from "@/lib/utils";
 
 const posterSrc = images.products.ta50.front.webp;
+const youtubeId = process.env.NEXT_PUBLIC_MATCH50_YOUTUBE_ID?.trim();
 
 export default function FeaturedMatch50Video() {
   return (
@@ -38,16 +40,28 @@ export default function FeaturedMatch50Video() {
           </div>
 
           <div className="overflow-hidden border border-brand-border bg-brand-panel shadow-[0_24px_80px_rgba(0,0,0,0.35)]">
-            <video
-              className="aspect-video w-full bg-brand-elevated object-cover"
-              controls
-              playsInline
-              preload="metadata"
-              poster={posterSrc}
-              aria-label="TechAim Match 50 promotional video showing range setup"
-            >
-              <source src={videos.match50Promo} type="video/mp4" />
-            </video>
+            {youtubeId ? (
+              <div className={cn("relative aspect-video w-full bg-brand-elevated")}>
+                <iframe
+                  className="absolute inset-0 h-full w-full"
+                  src={`https://www.youtube-nocookie.com/embed/${youtubeId}?rel=0`}
+                  title="TechAim Match 50 promotional video"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <video
+                className="aspect-video w-full bg-brand-elevated object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster={posterSrc}
+                aria-label="TechAim Match 50 promotional video showing range setup"
+              >
+                <source src={videos.match50Promo} type="video/mp4" />
+              </video>
+            )}
           </div>
         </motion.div>
       </div>

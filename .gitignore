@@ -20,9 +20,10 @@
 # production
 /build
 
-# Large promo videos (exceed GitHub 100MB limit — keep locally or host on CDN)
-/public/Video/*.mp4
-/public/video/*.mp4
+# Full-quality promo masters only (web encode match-50-promo.mp4 is committed)
+/public/Video/match-50-promo.source.mp4
+/public/video/match-50-promo.source.mp4
+/public/Video/Promo*.mp4
 
 # misc
 .DS_Store

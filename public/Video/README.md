@@ -1,7 +1,23 @@
 # Match 50 promo video
 
-Place **`match-50-promo.mp4`** in this folder for the homepage featured block.
+| File | Purpose |
+|------|---------|
+| `match-50-promo.mp4` | Web-optimized encode (~25MB) — **committed**, used on homepage |
+| `match-50-promo.source.mp4` | Original full-quality master — **gitignored** if you keep a backup |
 
-- Path used by the site: `/video/match-50-promo.mp4` (see `videos.match50Promo` in `lib/assets.ts`)
-- **Not committed to Git** — files over 100MB are rejected by GitHub
-- For production: compress the video (target under ~80MB), use [Git LFS](https://git-lfs.github.com), or host on YouTube/Vimeo and embed instead
+## Regenerate web encode
+
+```bash
+# Place source at public/Video/match-50-promo.source.mp4 (or restore original name)
+npm run compress:video
+```
+
+## YouTube instead of self-hosted
+
+Set in `.env.local` (or Vercel env):
+
+```env
+NEXT_PUBLIC_MATCH50_YOUTUBE_ID=your_video_id
+```
+
+When set, the homepage block uses a YouTube embed instead of the local MP4.
