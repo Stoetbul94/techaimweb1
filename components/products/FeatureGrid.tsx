@@ -13,7 +13,7 @@ export default function FeatureGrid({ features }: FeatureGridProps) {
           <div className="flex items-start gap-3">
             <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-brand-crimson" />
             <div>
-              <h4 className="font-heading font-semibold text-brand-text-primary">{feature.title}</h4>
+              <h3 className="font-heading font-semibold text-brand-text-primary">{feature.title}</h3>
               <p className="mt-2 text-sm leading-7">{feature.description}</p>
             </div>
           </div>

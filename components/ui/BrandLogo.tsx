@@ -22,11 +22,12 @@ export default function BrandLogo({ className, showWordmark = true, iconSize = 2
     <Link href="/" className={cn("flex items-center gap-3", className)} aria-label={`${BRAND_NAME} home`}>
       <Image
         src="/favicon-32x32.png"
-        alt=""
+        alt={BRAND_NAME}
         width={iconSize}
         height={iconSize}
         className="shrink-0"
         priority
+        aria-hidden={showWordmark}
       />
       {showWordmark ? <BrandWordmark className="text-[18px] lg:text-[20px]" /> : null}
     </Link>

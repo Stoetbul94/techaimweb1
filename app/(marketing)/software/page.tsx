@@ -1,5 +1,5 @@
-import type { Metadata } from "next";
 import Link from "next/link";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import ConversionStrip from "@/components/layout/ConversionStrip";
 import PageHero from "@/components/layout/PageHero";
 import ArchitectureDiagram from "@/components/media/ArchitectureDiagram";
@@ -7,10 +7,7 @@ import BackgroundLayers from "@/components/media/BackgroundLayers";
 import FeatureTabs from "@/components/software/FeatureTabs";
 import { images } from "@/lib/imageRegistry";
 
-export const metadata: Metadata = {
-  title: "Software Platform",
-  description: "Range control software with live scoring, athlete management, competition management and cloud synchronisation.",
-};
+export const metadata = buildStaticPageMetadata("/software");
 
 export default function SoftwarePage() {
   return (

@@ -1,11 +1,8 @@
-import type { Metadata } from "next";
 import ConversionStrip from "@/components/layout/ConversionStrip";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import PageHero from "@/components/layout/PageHero";
 
-export const metadata: Metadata = {
-  title: "About",
-  description: "TECH AIM — precision measurement and performance analytics platform engineered for competitive shooting sports.",
-};
+export const metadata = buildStaticPageMetadata("/about");
 
 export default function AboutPage() {
   return (

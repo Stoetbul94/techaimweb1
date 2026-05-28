@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import ConversionStrip from "@/components/layout/ConversionStrip";
 import PageHero from "@/components/layout/PageHero";
 import DownloadsPortal from "@/components/downloads/DownloadsPortal";
 
-export const metadata: Metadata = {
-  title: "Downloads",
-  description: "Technical documentation, datasheets, firmware, software and CAD drawings for TECH AIM systems.",
-};
+export const metadata = buildStaticPageMetadata("/downloads");
 
 export default function DownloadsPage() {
   return (

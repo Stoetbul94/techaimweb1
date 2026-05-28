@@ -1,12 +1,9 @@
-import type { Metadata } from "next";
 import ConversionStrip from "@/components/layout/ConversionStrip";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import PageHero from "@/components/layout/PageHero";
 import SupportHub from "@/components/support/SupportHub";
 
-export const metadata: Metadata = {
-  title: "Support",
-  description: "Knowledge base, troubleshooting guides, firmware downloads, support tickets and system status.",
-};
+export const metadata = buildStaticPageMetadata("/support");
 
 export default function SupportPage() {
   return (

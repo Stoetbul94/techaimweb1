@@ -1,10 +1,7 @@
-import type { Metadata } from "next";
 import ContactPageClient from "./ContactPageClient";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Book a demonstration, request a quotation or contact the TECH AIM engineering team.",
-};
+export const metadata = buildStaticPageMetadata("/contact");
 
 export default function ContactPage() {
   return <ContactPageClient />;

@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
 import ProductImage from "@/components/media/ProductImage";
 import { images } from "@/lib/imageRegistry";
 import type { ImageAsset } from "@/lib/imageRegistry";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = buildPageMetadata({
   title: "Electronic Scoring Systems",
   description: "TechAim Match 10, Match 50 and future systems for competitive shooting.",
-};
+  path: "/systems",
+  noIndex: true,
+});
 
 const currentProducts: {
   name: string;

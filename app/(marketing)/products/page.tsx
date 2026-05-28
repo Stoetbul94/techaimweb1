@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import ConversionStrip from "@/components/layout/ConversionStrip";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import PageHero from "@/components/layout/PageHero";
 import ProductCard from "@/components/products/ProductCard";
 import { products } from "@/lib/products";
 
-export const metadata: Metadata = {
-  title: "Products",
-  description: "Precision electronic target systems for competitive shooting — Match 10, Match 50 and future platforms.",
-};
+export const metadata = buildStaticPageMetadata("/products");
 
 export default function ProductsPage() {
   const available = products.filter((p) => p.status === "available");

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import JsonLd from "@/components/seo/JsonLd";
 import ConversionStrip from "@/components/layout/ConversionStrip";
 import StickySectionNav from "@/components/layout/StickySectionNav";
 import CompatibilityMatrix from "@/components/products/CompatibilityMatrix";
@@ -17,6 +18,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { buildProductJsonLd, buildProductMetadata } from "@/lib/seo-product";
 import { getProduct, getRelatedProducts, products } from "@/lib/products";
 
 const sections = [
@@ -37,10 +39,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = getProduct(slug);
   if (!product) return { title: "Product Not Found" };
-  return {
-    title: product.name,
-    description: product.headline,
-  };
+  return buildProductMetadata(product);
 }
 
 export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -52,6 +51,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
 
   return (
     <main className="bg-brand-bg pt-20">
+      <JsonLd data={buildProductJsonLd(product)} />
       <section className="border-b border-brand-border bg-[radial-gradient(circle_at_80%_20%,rgba(168,0,56,0.08),transparent_32%)]">
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center gap-3">

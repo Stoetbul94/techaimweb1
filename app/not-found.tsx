@@ -1,4 +1,12 @@
 import Link from "next/link";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata = buildPageMetadata({
+  title: "Page not found",
+  description: "The page you requested could not be found on the TechAim website.",
+  path: "/404",
+  noIndex: true,
+});
 
 export default function NotFound() {
   return (

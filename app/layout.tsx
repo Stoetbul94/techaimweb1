@@ -3,7 +3,9 @@ import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 import Footer from "@/components/ui/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Navbar from "@/components/ui/Navbar";
+import JsonLd from "@/components/seo/JsonLd";
 import { BRAND_NAME } from "@/lib/brand";
+import { getMetadataBase } from "@/lib/seo";
 import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
@@ -26,6 +28,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: getMetadataBase(),
   title: {
     default: `${BRAND_NAME} | Precision Measurement & Performance Analytics`,
     template: `%s | ${BRAND_NAME}`,
@@ -54,9 +57,11 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_ZA",
     siteName: BRAND_NAME,
+    images: [{ url: "/og-default.png", width: 512, height: 512, alt: BRAND_NAME }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/og-default.png"],
   },
 };
 
@@ -71,11 +76,9 @@ export default function RootLayout({
       className={`${sora.variable} ${inter.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full bg-brand-bg text-brand-text-body">
-        <script
-          type="application/ld+json"
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
+        <JsonLd
+          data={[
+            {
               "@context": "https://schema.org",
               "@type": "Organization",
               name: BRAND_NAME,
@@ -83,8 +86,18 @@ export default function RootLayout({
               description:
                 "Precision measurement and performance analytics platform for shooting sports.",
               areaServed: ["Africa", "Worldwide"],
-            }),
-          }}
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: BRAND_NAME,
+              url: getSiteUrl(),
+              publisher: {
+                "@type": "Organization",
+                name: BRAND_NAME,
+              },
+            },
+          ]}
         />
         <header>
           <Navbar />

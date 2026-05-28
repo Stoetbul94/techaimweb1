@@ -1,9 +1,6 @@
-import type { Metadata } from "next";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 
-export const metadata: Metadata = {
-  title: "News & ISSF",
-  description: "ISSF updates and TechAim electronic scoring resources.",
-};
+export const metadata = buildStaticPageMetadata("/news");
 
 const posts = [
   {

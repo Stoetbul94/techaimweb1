@@ -1,13 +1,10 @@
-import type { Metadata } from "next";
 import ConversionStrip from "@/components/layout/ConversionStrip";
+import { buildStaticPageMetadata } from "@/lib/seo-config";
 import PageHero from "@/components/layout/PageHero";
 import ApiExplorer from "@/components/developers/ApiExplorer";
 import { apiEndpoints, webhookEvents, wsEndpoint } from "@/lib/api-spec";
 
-export const metadata: Metadata = {
-  title: "Developer API",
-  description: "REST API, WebSocket feeds, webhooks and developer documentation for TECH AIM integration.",
-};
+export const metadata = buildStaticPageMetadata("/developers");
 
 export default function DevelopersPage() {
   const tags = [...new Set(apiEndpoints.flatMap((e) => e.tags))];
