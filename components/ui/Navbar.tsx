@@ -6,6 +6,7 @@ import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion"
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
 import BrandLogo from "@/components/ui/BrandLogo";
+import SocialLinks from "@/components/ui/SocialLinks";
 import { BRAND_NAME } from "@/lib/brand";
 import { whatsappLink } from "@/lib/contact";
 
@@ -58,6 +59,7 @@ export default function Navbar() {
           </Link>
         </div>
         <div className="hidden items-center gap-3 lg:flex">
+          <SocialLinks variant="navbar" />
           <Link
             href="/contact?intent=demo"
             className="border border-brand-crimson px-5 py-2.5 font-heading text-sm font-semibold text-brand-crimson transition hover:bg-brand-crimson hover:text-brand-text-primary"
@@ -106,6 +108,10 @@ export default function Navbar() {
               <Link href="/developers" onClick={() => setOpen(false)} className="font-heading text-2xl font-semibold text-brand-crimson">
                 Developers / API
               </Link>
+              <div className="mt-4 border-t border-brand-border pt-6">
+                <p className="font-body text-xs uppercase tracking-[0.16em] text-brand-text-muted">Follow us</p>
+                <SocialLinks variant="navbar" className="mt-3" />
+              </div>
               <Link
                 href="/contact?intent=demo"
                 onClick={() => setOpen(false)}

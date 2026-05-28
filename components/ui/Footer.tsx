@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
 import { BrandWordmark } from "@/components/ui/BrandLogo";
+import SocialLinks from "@/components/ui/SocialLinks";
 import { BRAND_NAME } from "@/lib/brand";
 import { contactEmail, whatsappLink } from "@/lib/contact";
 import { products } from "@/lib/products";
@@ -27,6 +28,10 @@ export default function Footer() {
               Precision Measurement and Performance Analytics Platform for Shooting Sports
             </p>
             <p className="mt-3 text-sm text-brand-text-muted">Engineered for competition-grade accuracy</p>
+            <h3 className="mt-6 font-heading text-sm font-semibold uppercase tracking-[0.16em] text-brand-text-primary">
+              Follow us
+            </h3>
+            <SocialLinks variant="footer" />
           </div>
           <div>
             <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.16em] text-brand-text-primary">Products</h3>

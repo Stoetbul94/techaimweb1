@@ -5,6 +5,7 @@ import { Suspense, useState } from "react";
 import { CalendarDays, Mail, MapPin, MessageCircle } from "lucide-react";
 import ConversionStrip from "@/components/layout/ConversionStrip";
 import PageHero from "@/components/layout/PageHero";
+import SocialLinks from "@/components/ui/SocialLinks";
 import { submitContactForm } from "@/app/actions/contact";
 import { contactEmail, whatsappLink } from "@/lib/contact";
 
@@ -76,6 +77,11 @@ function ContactFormInner() {
               <h2 className="mt-4 font-heading text-2xl font-bold text-brand-text-primary">Chat on WhatsApp</h2>
               <p className="mt-2">Get a response within 1 business day.</p>
             </a>
+            <div className="border border-brand-border bg-brand-panel p-6">
+              <h2 className="font-heading text-2xl font-bold text-brand-text-primary">Follow us</h2>
+              <p className="mt-2 text-sm">Product demos, range updates, and competition content.</p>
+              <SocialLinks variant="contact" />
+            </div>
             <div className="border border-brand-border bg-brand-panel p-6">
               <Mail className="text-brand-crimson" />
               <p className="mt-3 text-brand-text-primary">{contactEmail}</p>
