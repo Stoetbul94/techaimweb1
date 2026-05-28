@@ -4,6 +4,7 @@ import Footer from "@/components/ui/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Navbar from "@/components/ui/Navbar";
 import { BRAND_NAME } from "@/lib/brand";
+import { getSiteUrl } from "@/lib/site";
 import "./globals.css";
 
 const sora = Sora({
@@ -78,7 +79,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               name: BRAND_NAME,
-              url: "https://techaim.co.za",
+              url: getSiteUrl(),
               description:
                 "Precision measurement and performance analytics platform for shooting sports.",
               areaServed: ["Africa", "Worldwide"],
