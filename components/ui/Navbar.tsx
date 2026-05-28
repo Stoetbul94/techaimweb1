@@ -5,6 +5,8 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { Menu, MessageCircle, X } from "lucide-react";
 import { useState } from "react";
+import BrandLogo from "@/components/ui/BrandLogo";
+import { BRAND_NAME } from "@/lib/brand";
 import { whatsappLink } from "@/lib/contact";
 
 const navLinks = [
@@ -18,30 +20,6 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-function Logo() {
-  return (
-    <Link href="/" className="flex items-center gap-3" aria-label="TECH AIM ARMS home">
-      <motion.svg
-        width="28"
-        height="28"
-        viewBox="0 0 28 28"
-        fill="none"
-        aria-hidden="true"
-        animate={{ rotate: 360 }}
-        transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
-      >
-        <circle cx="14" cy="14" r="10" stroke="#A80038" strokeWidth="1.5" />
-        <circle cx="14" cy="14" r="4" stroke="#A80038" strokeWidth="1" opacity="0.75" />
-        <path d="M14 1v7M14 20v7M1 14h7M20 14h7" stroke="#A80038" strokeWidth="1.4" />
-      </motion.svg>
-      <span className="font-heading text-[18px] font-bold tracking-wide text-brand-text-primary lg:text-[20px]">
-        TECH<span className="text-brand-crimson"> AIM</span>
-        <span className="ml-1 text-brand-text-body/70">ARMS</span>
-      </span>
-    </Link>
-  );
-}
-
 export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
@@ -54,7 +32,7 @@ export default function Navbar() {
       className="fixed left-0 top-0 z-50 w-full border-b border-white/5 backdrop-blur-md"
     >
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Logo />
+        <BrandLogo />
         <div className="hidden items-center gap-5 xl:flex">
           {navLinks.map((link) => {
             const active = pathname === link.href || (link.href !== "/" && pathname.startsWith(`${link.href}/`));
@@ -87,7 +65,7 @@ export default function Navbar() {
             Book a Demo
           </Link>
           <Link
-            href={whatsappLink("Hi, I'm interested in TECH AIM ARMS")}
+            href={whatsappLink(`Hi, I'm interested in ${BRAND_NAME} systems`)}
             target="_blank"
             rel="noopener noreferrer"
             className="grid h-11 w-11 place-items-center bg-brand-crimson text-brand-text-primary transition hover:scale-105"

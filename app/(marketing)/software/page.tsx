@@ -38,7 +38,7 @@ export default function SoftwarePage() {
           <div>
             <h3 className="font-heading text-xl font-bold text-brand-text-primary">Developer API</h3>
             <p className="mt-2 max-w-xl text-sm leading-7">
-              Integrate TECH AIM ARMS with your existing systems via REST API and WebSocket feeds.
+              Integrate TECH AIM with your existing systems via REST API and WebSocket feeds.
             </p>
           </div>
           <Link href="/developers" className="mt-6 inline-block border border-brand-crimson px-6 py-3 font-heading text-sm font-semibold text-brand-crimson md:mt-0">

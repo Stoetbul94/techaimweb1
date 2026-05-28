@@ -1,4 +1,4 @@
-# TECH AIM ARMS — Image assets
+# TECH AIM — Image assets
 
 Static images live under `public/images/`. **3D models** stay in `public/models/` (`.glb` only).
 

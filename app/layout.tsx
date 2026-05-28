@@ -3,6 +3,7 @@ import { Inter, JetBrains_Mono, Sora } from "next/font/google";
 import Footer from "@/components/ui/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import Navbar from "@/components/ui/Navbar";
+import { BRAND_NAME } from "@/lib/brand";
 import "./globals.css";
 
 const sora = Sora({
@@ -25,8 +26,8 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "TECH AIM ARMS | Precision Measurement & Performance Analytics",
-    template: "%s | TECH AIM ARMS",
+    default: `${BRAND_NAME} | Precision Measurement & Performance Analytics`,
+    template: `%s | ${BRAND_NAME}`,
   },
   description:
     "Precision measurement and performance analytics platform for shooting sports. Competition-grade shot detection, advanced analytics and instant feedback.",
@@ -38,11 +39,20 @@ export const metadata: Metadata = {
     "performance analytics",
     "electronic shooting targets",
     "shot detection",
+    "Tech Aim",
   ],
+  icons: {
+    icon: [
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+  },
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    siteName: "TECH AIM ARMS",
+    siteName: BRAND_NAME,
   },
   twitter: {
     card: "summary_large_image",
@@ -67,7 +77,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "TECH AIM ARMS",
+              name: BRAND_NAME,
               url: "https://techaim.co.za",
               description:
                 "Precision measurement and performance analytics platform for shooting sports.",

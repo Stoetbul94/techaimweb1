@@ -31,7 +31,7 @@ export default function WhyTechAimArms() {
   return (
     <section className="bg-brand-bg py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <p className="font-body text-xs uppercase tracking-[0.2em] text-brand-crimson">Why TECH AIM ARMS</p>
+        <p className="font-body text-xs uppercase tracking-[0.2em] text-brand-crimson">Why TECH AIM</p>
         <h2 className="mt-4 font-heading text-[clamp(2rem,4vw,3rem)] font-bold text-brand-text-primary">
           Built for performance, not just scoring
         </h2>

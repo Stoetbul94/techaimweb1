@@ -1,9 +1,9 @@
-You are building the TECH AIM ARMS website — a precision measurement and performance analytics platform for shooting sports.
+You are building the TECH AIM website — a precision measurement and performance analytics platform for shooting sports.
 
 Tech stack: Next.js 15, TypeScript, TailwindCSS, Framer Motion, GSAP, Three.js / React Three Fiber, shadcn/ui, Recharts.
 
 Brand rules:
-- Company name: TECH AIM ARMS
+- Company name: TECH AIM
 - Positioning: Analytics platform first, hardware second
 - Background: #050505
 - Surfaces: #111111 (panel), #1A1A1A (elevated), #232323 (secondary)

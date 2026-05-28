@@ -1,5 +1,7 @@
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
+import { BrandWordmark } from "@/components/ui/BrandLogo";
+import { BRAND_NAME } from "@/lib/brand";
 import { contactEmail, whatsappLink } from "@/lib/contact";
 import { products } from "@/lib/products";
 
@@ -18,8 +20,8 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <Link href="/" className="font-heading text-xl font-bold text-brand-text-primary lg:text-2xl">
-              TECH<span className="text-brand-crimson"> AIM</span> ARMS
+            <Link href="/" className="inline-block">
+              <BrandWordmark className="text-xl lg:text-2xl" />
             </Link>
             <p className="mt-4 text-sm text-brand-text-primary">
               Precision Measurement and Performance Analytics Platform for Shooting Sports
@@ -49,7 +51,7 @@ export default function Footer() {
           <div>
             <h3 className="font-heading text-sm font-semibold uppercase tracking-[0.16em] text-brand-text-primary">Contact</h3>
             <Link
-              href={whatsappLink("Hi, I'm interested in TECH AIM ARMS")}
+              href={whatsappLink(`Hi, I'm interested in ${BRAND_NAME}`)}
               target="_blank"
               rel="noopener noreferrer"
               className="mt-5 inline-flex items-center gap-2 bg-brand-crimson px-5 py-3 font-heading text-sm font-semibold text-brand-text-primary"
@@ -62,7 +64,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-12 border-t border-brand-border pt-6 text-sm text-brand-text-muted/90 md:flex md:items-center md:justify-between">
-          <p>Copyright 2026 TECH AIM ARMS. All rights reserved.</p>
+          <p>Copyright 2026 {BRAND_NAME}. All rights reserved.</p>
           <p className="mt-3 text-brand-crimson md:mt-0">ISSF-aligned scoring workflows</p>
         </div>
       </div>

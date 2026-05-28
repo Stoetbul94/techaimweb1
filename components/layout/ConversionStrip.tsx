@@ -37,7 +37,7 @@ export default function ConversionStrip({
               Contact Engineering
             </Link>
             <Link
-              href={whatsappLink("Hi, I'm interested in TECH AIM ARMS systems")}
+              href={whatsappLink("Hi, I'm interested in TECH AIM systems")}
               target="_blank"
               rel="noopener noreferrer"
               className="border border-brand-crimson px-8 py-3 text-center font-heading text-sm font-semibold text-brand-crimson"

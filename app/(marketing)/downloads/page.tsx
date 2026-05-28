@@ -6,7 +6,7 @@ import DownloadsPortal from "@/components/downloads/DownloadsPortal";
 
 export const metadata: Metadata = {
   title: "Downloads",
-  description: "Technical documentation, datasheets, firmware, software and CAD drawings for TECH AIM ARMS systems.",
+  description: "Technical documentation, datasheets, firmware, software and CAD drawings for TECH AIM systems.",
 };
 
 export default function DownloadsPage() {

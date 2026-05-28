@@ -18,7 +18,7 @@ export default function ProductsPage() {
       <PageHero
         eyebrow="Hardware platform"
         title="Precision Electronic Target Systems"
-        description="Competition-grade shot detection engineered for modern shooting sports. Every system integrates seamlessly with the TECH AIM ARMS analytics platform."
+        description="Competition-grade shot detection engineered for modern shooting sports. Every system integrates seamlessly with the TECH AIM analytics platform."
       />
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
         <h2 className="font-heading text-3xl font-bold text-brand-text-primary">Available Now</h2>

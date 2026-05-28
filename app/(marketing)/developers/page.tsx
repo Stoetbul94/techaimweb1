@@ -6,7 +6,7 @@ import { apiEndpoints, webhookEvents, wsEndpoint } from "@/lib/api-spec";
 
 export const metadata: Metadata = {
   title: "Developer API",
-  description: "REST API, WebSocket feeds, webhooks and developer documentation for TECH AIM ARMS integration.",
+  description: "REST API, WebSocket feeds, webhooks and developer documentation for TECH AIM integration.",
 };
 
 export default function DevelopersPage() {

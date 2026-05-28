@@ -4,7 +4,7 @@ import PageHero from "@/components/layout/PageHero";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "TECH AIM ARMS — precision measurement and performance analytics platform engineered for competitive shooting sports.",
+  description: "TECH AIM — precision measurement and performance analytics platform engineered for competitive shooting sports.",
 };
 
 export default function AboutPage() {
@@ -13,7 +13,7 @@ export default function AboutPage() {
       <PageHero
         eyebrow="Engineering excellence"
         title="Precision measurement, engineered for sport"
-        description="TECH AIM ARMS develops electronic target systems and intelligent analytics platforms for competitive shooting environments worldwide."
+        description="TECH AIM develops electronic target systems and intelligent analytics platforms for competitive shooting environments worldwide."
       />
       <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="space-y-8 text-lg leading-9">

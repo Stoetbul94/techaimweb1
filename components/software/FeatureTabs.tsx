@@ -32,7 +32,7 @@ function MockDashboard({ feature }: { feature: (typeof features)[0] }) {
         <div className="h-2.5 w-2.5 rounded-full bg-brand-crimson" />
         <div className="h-2.5 w-2.5 rounded-full bg-brand-warning" />
         <div className="h-2.5 w-2.5 rounded-full bg-brand-success" />
-        <span className="ml-2 font-mono text-xs text-brand-text-body">TECH AIM ARMS — {feature.label}</span>
+        <span className="ml-2 font-mono text-xs text-brand-text-body">TECH AIM — {feature.label}</span>
       </div>
       <div className="grid gap-4 p-6 md:grid-cols-3">
         <div className="md:col-span-2">

@@ -71,7 +71,7 @@ function ContactFormInner() {
             {status === "success" && <p className="mt-4 text-sm text-brand-success">Message sent. We will respond within 1 business day.</p>}
           </form>
           <div className="space-y-5">
-            <a href={whatsappLink("Hi, I'm interested in TECH AIM ARMS")} target="_blank" rel="noopener noreferrer" className="block border border-[#25D366]/60 bg-brand-panel p-6">
+            <a href={whatsappLink("Hi, I'm interested in TECH AIM")} target="_blank" rel="noopener noreferrer" className="block border border-[#25D366]/60 bg-brand-panel p-6">
               <MessageCircle className="text-[#25D366]" size={34} />
               <h2 className="mt-4 font-heading text-2xl font-bold text-brand-text-primary">Chat on WhatsApp</h2>
               <p className="mt-2">Get a response within 1 business day.</p>
