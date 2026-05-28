@@ -1,6 +1,8 @@
 import Link from "next/link";
+import ProductImage from "@/components/media/ProductImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { getProductImage } from "@/lib/imageRegistry";
 import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -8,14 +10,20 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
+  const imageAsset = getProductImage(product.slug);
+
   return (
     <article className="flex h-full flex-col border-t-2 border-brand-crimson bg-brand-panel">
-      <div
-        className="aspect-video grid place-items-center border-b border-brand-border bg-brand-panel text-sm text-brand-text-body"
-        aria-label={`${product.name} image placeholder`}
-      >
-        Product Image
-      </div>
+      {imageAsset ? (
+        <ProductImage asset={imageAsset} variant="card" glowOnHover />
+      ) : (
+        <div
+          className="aspect-video grid place-items-center border-b border-brand-border bg-brand-panel text-sm text-brand-text-body"
+          aria-label={`${product.name} image placeholder`}
+        >
+          Product Image
+        </div>
+      )}
       <div className="flex flex-1 flex-col p-6">
         <div className="flex items-center gap-2">
           <Badge variant={product.status === "available" ? "default" : "outline"}>

@@ -1,0 +1,51 @@
+{
+  "products/ta10-classic/ta10-classic-perspective": {
+    "png": "/images/products/ta10-classic/ta10-classic-perspective.png",
+    "webp": "/images/products/ta10-classic/ta10-classic-perspective.webp",
+    "width": 1585,
+    "height": 992,
+    "blurDataURL": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAwAgCdASoQAAoAA4BaJZwAD4usqs9/HmNwAAD+9mpUI+K7UWtKGkH8L2fHQY6foE6HwH8zLWl4ulDOnMCGUuLCUWRRhF4v4yrEh/+r+F6i445UfrGBAAAA"
+  },
+  "products/ta10-pro/ta10-pro-front": {
+    "png": "/images/products/ta10-pro/ta10-pro-front.png",
+    "webp": "/images/products/ta10-pro/ta10-pro-front.webp",
+    "width": 1024,
+    "height": 1536,
+    "blurDataURL": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAACwAQCdASoLABAAA4BaJYgAAppXS2TgAP5okB3sjWJ1jl83IoHp8PUf0uEf8AI8acOypNfO1IFjgg1eP8ZDH/Ylg2rGvwwXBi2ofOQrAH7k0OxQqG8/xEy2ycrAAA=="
+  },
+  "products/ta50/ta50-dashboard-tablet": {
+    "png": "/images/products/ta50/ta50-dashboard-tablet.png",
+    "webp": "/images/products/ta50/ta50-dashboard-tablet.webp",
+    "width": 1536,
+    "height": 1024,
+    "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwAgCdASoQAAsAA4BaJYgCdAYtBqpNkLpZjyNoAPl3vRdSZeZCTcytTIuw7+q4N79cj6tk7Cz21pPDaJh8iAYpFzyyJVLkcNvpGlcJXQAqpX5yasZB+2rt/5njN9h9WXmaAZejMvlnfkkJXwZ5o+bPsz3TjW6P1yJjFM9CwpGAAA=="
+  },
+  "software/software-dashboard-raw": {
+    "png": "/images/software/software-dashboard-raw.png",
+    "webp": "/images/software/software-dashboard-raw.webp",
+    "width": 755,
+    "height": 407,
+    "blurDataURL": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQAgCdASoQAAkAA4BaJbACdDBOSIkLci4iHPF1IAD9A1czjOGpbRXq+dNy1qKafYmuz1rH2+lj9YNdeyxT5SlNWBlY74Os05gb+l8rq4iZEH5T7OIW/aIZwL2NplY4A8bFsThmwN67ewTQOaj+cncAAAA="
+  },
+  "software/software-dashboard-tablet-black-target": {
+    "png": "/images/software/software-dashboard-tablet-black-target.png",
+    "webp": "/images/software/software-dashboard-tablet-black-target.webp",
+    "width": 1536,
+    "height": 1024,
+    "blurDataURL": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQAgCdASoQAAsAA4BaJZwAD4nPqvbO2H0AAPWcX9P9XmgL1hXqMreJt0bvhb86mtgB/NvkH4fsjEEl+NhBk2IsGH3CGZBC4l6k3gPUBzveP3W7CY7zBCX8gXk3wDN/tjzFzAKQXQtSriQD/wPgW6AA"
+  },
+  "software/software-dashboard-tablet-blue-target": {
+    "png": "/images/software/software-dashboard-tablet-blue-target.png",
+    "webp": "/images/software/software-dashboard-tablet-blue-target.webp",
+    "width": 617,
+    "height": 337,
+    "blurDataURL": "data:image/webp;base64,UklGRmwAAABXRUJQVlA4IGAAAAAwAgCdASoQAAkAA4BaJYwCw7EXwvwg6r7aYAD9A1czlxkxLP++kW2xYdunBKTU4MCq9UXPja7x79ogGYcNytbZQ0bSvrwiNHSZchTNoTTDxnoTzi1VDJWZBGoFxijgYAA="
+  },
+  "systems/system-plc-architecture": {
+    "png": "/images/systems/system-plc-architecture.png",
+    "webp": "/images/systems/system-plc-architecture.webp",
+    "width": 1536,
+    "height": 1024,
+    "blurDataURL": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAQCdASoQAAsAA4BaJaQAApPvdlQAAP71ANRAWHmZRjjLO6qyv0PNfyTfDG6FkqN1h+MhzMx8mj12pqwI5aV/EzjndWKsuYZo3UMRQAA="
+  }
+}

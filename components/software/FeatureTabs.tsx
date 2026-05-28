@@ -1,6 +1,9 @@
 "use client";
 
+import GlowImage from "@/components/media/GlowImage";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { images } from "@/lib/imageRegistry";
+import { imageSizes } from "@/lib/image-utils";
 
 const features = [
   { id: "dashboard", label: "Dashboard", title: "Live Range Dashboard", desc: "Real-time overview of all active lanes, scores and system status." },
@@ -14,7 +17,15 @@ const features = [
   { id: "mobile", label: "Mobile", title: "Mobile Applications", desc: "iOS and Android apps for athletes and range officials." },
 ];
 
+const tabPreviewAssets: Partial<Record<string, (typeof images.software)[keyof typeof images.software]>> = {
+  dashboard: images.software.dashboardTabletBlackTarget,
+  mobile: images.software.dashboardTabletBlueTarget,
+  scoring: images.software.dashboardRaw,
+};
+
 function MockDashboard({ feature }: { feature: (typeof features)[0] }) {
+  const previewAsset = tabPreviewAssets[feature.id];
+
   return (
     <div className="border border-brand-border bg-brand-panel">
       <div className="flex items-center gap-2 border-b border-brand-border bg-brand-surface px-4 py-3">
@@ -27,11 +38,17 @@ function MockDashboard({ feature }: { feature: (typeof features)[0] }) {
         <div className="md:col-span-2">
           <h4 className="font-heading text-xl font-bold text-brand-text-primary">{feature.title}</h4>
           <p className="mt-2 text-sm leading-7">{feature.desc}</p>
-          <div className="mt-6 h-48 border border-brand-border bg-brand-bg">
-            <svg viewBox="0 0 400 180" className="h-full w-full" aria-hidden="true">
-              <polyline fill="none" stroke="#3B82F6" strokeWidth="2" points="10,150 50,120 90,130 130,90 170,100 210,70 250,80 290,50 330,60 370,40" />
-            </svg>
-          </div>
+          {previewAsset ? (
+            <div className="mt-6">
+              <GlowImage asset={previewAsset} sizes={imageSizes.software} telemetryGlow />
+            </div>
+          ) : (
+            <div className="mt-6 h-48 border border-brand-border bg-brand-bg">
+              <svg viewBox="0 0 400 180" className="h-full w-full" aria-hidden="true">
+                <polyline fill="none" stroke="#3B82F6" strokeWidth="2" points="10,150 50,120 90,130 130,90 170,100 210,70 250,80 290,50 330,60 370,40" />
+              </svg>
+            </div>
+          )}
         </div>
         <div className="space-y-3">
           {["Lane 1: Active", "Lane 2: Active", "Lane 3: Idle"].map((lane) => (

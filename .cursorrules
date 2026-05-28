@@ -17,3 +17,5 @@ Brand rules:
 - Maintain WCAG AA contrast (crimson CTAs use #F5F5F5 foreground)
 
 Always use TypeScript interfaces, cn() utility, Framer Motion for UI animation, GSAP for scroll choreography, mobile-first responsive design.
+
+Asset paths: follow `public/images/README.md`; register in `lib/imageRegistry.ts` after `npm run optimize:images`; use `@/components/media` (never hardcode `/images/` or `/models/` in components).

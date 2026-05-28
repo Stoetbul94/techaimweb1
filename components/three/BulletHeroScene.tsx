@@ -1,9 +1,12 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { Suspense, useMemo, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import { Canvas } from "@react-three/fiber";
+import { Sparkles, useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 import { useMouseParallax } from "@/hooks/useMouseParallax";
+import { models } from "@/lib/assets";
 
 /* ---------- floating particles (CSS-driven) ---------- */
 
@@ -54,11 +57,40 @@ function Particles() {
 function ScanSweep() {
   return (
     <div
-      className="pointer-events-none absolute inset-0 z-[4] animate-[scan-sweep_4s_linear_infinite]"
+      className="pointer-events-none absolute inset-0 z-[5] animate-[scan-sweep_4s_linear_infinite]"
       aria-hidden="true"
     >
       <div className="h-px w-full bg-gradient-to-r from-transparent via-brand-telemetry/15 to-transparent" />
     </div>
+  );
+}
+
+/* ---------- 3D rifle layer (R3F) ---------- */
+
+function RifleModel() {
+  const { scene } = useGLTF(models.heroRifle);
+  const model = useMemo(() => scene.clone(), [scene]);
+
+  return (
+    <group position={[-1.58, -0.46, 0]} rotation={[0.04, Math.PI - 0.08, -0.03]} scale={2.25}>
+      <primitive object={model} />
+    </group>
+  );
+}
+
+function RifleLayer() {
+  return (
+    <Canvas camera={{ position: [0, 0.05, 5.8], fov: 42 }} dpr={[1, 1.5]} className="pointer-events-none">
+      <ambientLight intensity={0.85} />
+      <spotLight position={[-2.6, 3.3, 4.5]} angle={0.46} penumbra={0.9} intensity={48} color="#ffffff" />
+      <spotLight position={[2.6, -0.8, 3.7]} angle={0.5} penumbra={1} intensity={18} color="#3B82F6" />
+      <pointLight position={[2.4, 1.2, 3.2]} intensity={10} color="#3B82F6" />
+      <Sparkles count={70} scale={8} size={1.4} speed={0.2} opacity={0.3} color="#3B82F6" />
+      <fog attach="fog" args={["#050505", 4, 12]} />
+      <Suspense fallback={null}>
+        <RifleModel />
+      </Suspense>
+    </Canvas>
   );
 }
 
@@ -255,10 +287,27 @@ export default function BulletHeroScene() {
       {/* L2: scan sweep */}
       <ScanSweep />
 
+      {/* L2.5: 3D rifle (behind target) */}
+      <div
+        className="pointer-events-none absolute z-[2] hidden md:block"
+        style={{
+          left: "-6%",
+          bottom: "-10%",
+          width: "78%",
+          height: "62%",
+          opacity: 0.9,
+          willChange: "transform, opacity",
+          transform: `translate3d(${mouse.x * 4}px, ${mouse.y * 3}px, 0)`,
+        }}
+        aria-hidden="true"
+      >
+        <RifleLayer />
+      </div>
+
       {/* L3: impact glow (behind target) */}
       <div
         ref={glowRef}
-        className="pointer-events-none absolute z-[3] rounded-full"
+        className="pointer-events-none absolute z-[4] rounded-full"
         style={{
           width: 180,
           height: 180,
@@ -276,7 +325,7 @@ export default function BulletHeroScene() {
       {/* L3: oversized target */}
       <div
         ref={targetRef}
-        className="pointer-events-none absolute z-[2]
+        className="pointer-events-none absolute z-[3]
           w-[320px] h-[320px] right-[-6%] top-[10%] opacity-25
           md:w-[400px] md:h-[400px] md:right-[-4%] md:top-[2%] md:opacity-100
           lg:w-[520px] lg:h-[520px] lg:right-[-8%] lg:top-[-6%]"
@@ -292,7 +341,7 @@ export default function BulletHeroScene() {
       {/* projectile */}
       <div
         ref={projectileRef}
-        className="pointer-events-none absolute left-[5%] top-[50%] z-[4] h-[10px] w-[34px] -translate-y-1/2 opacity-0
+        className="pointer-events-none absolute left-[5%] top-[50%] z-[6] h-[10px] w-[34px] -translate-y-1/2 opacity-0
           md:left-[8%] md:top-[48%]"
         style={{ willChange: "transform, opacity" }}
         aria-hidden="true"
@@ -304,7 +353,7 @@ export default function BulletHeroScene() {
       {/* L4: coordinate readout */}
       <div
         ref={coordinateRef}
-        className="pointer-events-none absolute z-[4] hidden border border-brand-telemetry/30 bg-[rgba(17,17,17,0.75)] px-3 py-2 font-mono text-[10px] text-brand-telemetry opacity-0 backdrop-blur-md
+        className="pointer-events-none absolute z-[6] hidden border border-brand-telemetry/30 bg-[rgba(17,17,17,0.75)] px-3 py-2 font-mono text-[10px] text-brand-telemetry opacity-0 backdrop-blur-md
           md:block md:right-[28%] md:top-[38%]
           lg:right-[24%] lg:top-[35%]"
         style={{
@@ -320,7 +369,7 @@ export default function BulletHeroScene() {
       {/* L5: glassmorphism analytics panel */}
       <div
         ref={analyticsRef}
-        className="pointer-events-none absolute z-[5] hidden w-64 border border-white/[0.06] p-5 font-mono text-xs opacity-0 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl
+        className="pointer-events-none absolute z-[7] hidden w-64 border border-white/[0.06] p-5 font-mono text-xs opacity-0 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl
           md:block md:bottom-8 md:right-6 md:w-56
           lg:bottom-10 lg:right-10 lg:w-64"
         style={{
@@ -361,3 +410,5 @@ export default function BulletHeroScene() {
     </div>
   );
 }
+
+useGLTF.preload(models.heroRifle);

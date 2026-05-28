@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import ProductImage from "@/components/media/ProductImage";
+import { images } from "@/lib/imageRegistry";
+import type { ImageAsset } from "@/lib/imageRegistry";
 
 export const metadata: Metadata = {
   title: "Electronic Scoring Systems",
   description: "TechAim Match 10, Match 50 and future systems for competitive shooting.",
 };
 
-const currentProducts = [
+const currentProducts: {
+  name: string;
+  tag: string;
+  body: string;
+  image?: ImageAsset;
+  specs: [string, string][];
+}[] = [
   {
     name: "TechAim Match 10",
     tag: "10m Electronic Target System",
     body: "For pistol and 10m rifle disciplines",
+    image: images.products.ta10Pro.front,
     specs: [
       ["Distance", "10m"],
       ["Discipline", "Air pistol and air rifle"],
@@ -22,6 +32,7 @@ const currentProducts = [
     name: "TechAim Match 50",
     tag: "50m Electronic Target System",
     body: "For 50m rifle disciplines",
+    image: images.products.ta50.dashboardTablet,
     specs: [
       ["Distance", "50m"],
       ["Discipline", "Small-bore rifle"],
@@ -57,9 +68,16 @@ export default function SystemsPage() {
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {currentProducts.map((product) => (
             <article key={product.name} className="border-t border-brand-crimson bg-brand-panel p-6">
-              <div className="aspect-video border border-dashed border-brand-crimson bg-brand-panel grid place-items-center text-sm" aria-label={`${product.name} image placeholder`}>
-                Product Image Coming Soon
-              </div>
+              {product.image ? (
+                <ProductImage asset={product.image} variant="card" glowOnHover />
+              ) : (
+                <div
+                  className="aspect-video border border-dashed border-brand-crimson bg-brand-panel grid place-items-center text-sm"
+                  aria-label={`${product.name} image placeholder`}
+                >
+                  Product Image Coming Soon
+                </div>
+              )}
               <span className="mt-6 inline-block bg-brand-signal px-3 py-1 text-xs font-medium text-brand-text-primary">
                 {product.tag}
               </span>

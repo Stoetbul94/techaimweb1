@@ -7,6 +7,7 @@ import CompatibilityMatrix from "@/components/products/CompatibilityMatrix";
 import FeatureGrid from "@/components/products/FeatureGrid";
 import ProductCard from "@/components/products/ProductCard";
 import SpecTable from "@/components/products/SpecTable";
+import ProductDetailMedia from "@/components/products/ProductDetailMedia";
 import TechnicalDrawing from "@/components/products/TechnicalDrawing";
 import {
   Accordion,
@@ -72,6 +73,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
               <Link href="/contact?intent=demo">Book Demonstration</Link>
             </Button>
           </div>
+          <ProductDetailMedia slug={product.slug} />
         </div>
       </section>
 
