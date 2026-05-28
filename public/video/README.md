@@ -12,12 +12,12 @@
 npm run compress:video
 ```
 
-## YouTube instead of self-hosted
+## YouTube (homepage default)
 
-Set in `.env.local` (or Vercel env):
+Promo: [youtu.be/N4bL8o1g_sQ](https://youtu.be/N4bL8o1g_sQ) — ID `N4bL8o1g_sQ` in `lib/assets.ts`.
+
+Override in `.env.local` or Vercel:
 
 ```env
-NEXT_PUBLIC_MATCH50_YOUTUBE_ID=your_video_id
+NEXT_PUBLIC_MATCH50_YOUTUBE_ID=N4bL8o1g_sQ
 ```
-
-When set, the homepage block uses a YouTube embed instead of the local MP4.

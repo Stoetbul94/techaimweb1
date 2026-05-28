@@ -12,6 +12,8 @@ export const models = {
 /** Static video paths under public/video/ */
 export const videos = {
   match50Promo: "/video/match-50-promo.mp4",
+  /** https://youtu.be/N4bL8o1g_sQ — override via NEXT_PUBLIC_MATCH50_YOUTUBE_ID */
+  match50YoutubeId: "N4bL8o1g_sQ",
 } as const;
 
 export {

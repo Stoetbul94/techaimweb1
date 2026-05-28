@@ -9,7 +9,8 @@ import { fadeUp } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const posterSrc = images.products.ta50.front.webp;
-const youtubeId = process.env.NEXT_PUBLIC_MATCH50_YOUTUBE_ID?.trim();
+const youtubeId =
+  process.env.NEXT_PUBLIC_MATCH50_YOUTUBE_ID?.trim() || videos.match50YoutubeId;
 
 export default function FeaturedMatch50Video() {
   return (
