@@ -32,7 +32,7 @@ const currentProducts: {
     name: "TechAim Match 50",
     tag: "50m Electronic Target System",
     body: "For 50m rifle disciplines",
-    image: images.products.ta50.dashboardTablet,
+    image: images.products.ta50.front,
     specs: [
       ["Distance", "50m"],
       ["Discipline", "Small-bore rifle"],

@@ -9,6 +9,11 @@ export const models = {
   heroCartridge: "/models/hero-22lr-cartridge.glb",
 } as const;
 
+/** Static video paths under public/video/ */
+export const videos = {
+  match50Promo: "/video/match-50-promo.mp4",
+} as const;
+
 export {
   images,
   getProductImage,

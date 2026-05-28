@@ -13,6 +13,8 @@ export type OptimizedImageProps = {
   className?: string;
   imageClassName?: string;
   fill?: boolean;
+  /** Tailwind aspect class (e.g. aspect-[4/3]) — uses fill layout instead of intrinsic asset ratio */
+  fixedAspect?: string;
   hoverZoom?: boolean;
   fadeIn?: boolean;
   glowOnHover?: boolean;
@@ -25,6 +27,7 @@ export default function OptimizedImage({
   className,
   imageClassName,
   fill = false,
+  fixedAspect,
   hoverZoom = true,
   fadeIn = true,
   glowOnHover = false,
@@ -32,20 +35,22 @@ export default function OptimizedImage({
 }: OptimizedImageProps) {
   const reduceMotion = useReducedMotion();
   const src = getAssetSrc(asset);
+  const useFill = fill || Boolean(fixedAspect);
 
   const image = (
     <Image
       src={src}
       alt={asset.alt}
-      width={fill ? undefined : asset.width}
-      height={fill ? undefined : asset.height}
-      fill={fill}
+      width={useFill ? undefined : asset.width}
+      height={useFill ? undefined : asset.height}
+      fill={useFill}
       sizes={sizes}
       priority={priority}
       placeholder="blur"
       blurDataURL={asset.blurDataURL}
       className={cn(
         "object-contain transition-transform duration-700 ease-out",
+        useFill && "p-2",
         hoverZoom && !reduceMotion && "group-hover:scale-[1.03]",
         imageClassName,
       )}
@@ -57,12 +62,14 @@ export default function OptimizedImage({
     <div
       className={cn(
         "group relative overflow-hidden bg-brand-panel",
+        fixedAspect,
+        useFill && "w-full",
         glowOnHover && "transition-shadow duration-500 hover:shadow-[0_0_48px_rgba(168,0,56,0.18)]",
         className,
       )}
-      style={fill ? undefined : { aspectRatio: `${asset.width} / ${asset.height}` }}
+      style={useFill ? undefined : { aspectRatio: `${asset.width} / ${asset.height}` }}
     >
-      {fill ? <div className="relative h-full w-full">{image}</div> : image}
+      {image}
     </div>
   );
 

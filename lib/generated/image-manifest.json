@@ -20,6 +20,13 @@
     "height": 1024,
     "blurDataURL": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAABwAgCdASoQAAsAA4BaJYgCdAYtBqpNkLpZjyNoAPl3vRdSZeZCTcytTIuw7+q4N79cj6tk7Cz21pPDaJh8iAYpFzyyJVLkcNvpGlcJXQAqpX5yasZB+2rt/5njN9h9WXmaAZejMvlnfkkJXwZ5o+bPsz3TjW6P1yJjFM9CwpGAAA=="
   },
+  "products/ta50/ta50-front": {
+    "png": "/images/products/ta50/ta50-front.png",
+    "webp": "/images/products/ta50/ta50-front.webp",
+    "width": 1254,
+    "height": 1254,
+    "blurDataURL": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAADQAQCdASoQABAAA4BaJZwAApLyZo0uAAD++Lp0aFTqAXrdYBPuKyosSovmYEysWtoLO9U3s0QpE138h3HCAwJcnfT4ufDYuDhTCuj0VG+lW+AA"
+  },
   "software/software-dashboard-raw": {
     "png": "/images/software/software-dashboard-raw.png",
     "webp": "/images/software/software-dashboard-raw.webp",

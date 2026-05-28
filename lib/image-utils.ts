@@ -1,5 +1,8 @@
 import type { ImageAsset } from "@/lib/imageRegistry";
 
+/** Fixed frame for product cards, heroes, and hardware galleries */
+export const productDisplayAspect = "aspect-[4/3]";
+
 /** Responsive `sizes` presets for next/image */
 export const imageSizes = {
   full: "100vw",

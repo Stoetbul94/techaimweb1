@@ -2,7 +2,7 @@
 
 import OptimizedImage, { type OptimizedImageProps } from "@/components/media/OptimizedImage";
 import type { ImageAsset } from "@/lib/imageRegistry";
-import { imageSizes } from "@/lib/image-utils";
+import { imageSizes, productDisplayAspect } from "@/lib/image-utils";
 import { cn } from "@/lib/utils";
 
 type ProductImageProps = {
@@ -31,11 +31,13 @@ export default function ProductImage({
       asset={asset}
       sizes={sizeByVariant[variant]}
       priority={priority}
+      fill
+      fixedAspect={productDisplayAspect}
       hoverZoom={hoverZoom}
       glowOnHover={glowOnHover}
       fadeIn
       className={cn("border-b border-brand-border", className)}
-      imageClassName="object-cover object-center"
+      imageClassName="object-contain object-center"
     />
   );
 }

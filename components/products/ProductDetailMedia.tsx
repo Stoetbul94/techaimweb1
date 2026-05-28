@@ -11,8 +11,11 @@ type ProductDetailMediaProps = {
   className?: string;
 };
 
-function isTabletSoftwareAsset(asset: ImageAsset): boolean {
-  return asset.src.includes("/software/") && asset.src.includes("tablet");
+function isTabletGalleryAsset(asset: ImageAsset): boolean {
+  return (
+    (asset.src.includes("/software/") && asset.src.includes("tablet")) ||
+    asset.src.includes("dashboard-tablet")
+  );
 }
 
 export default function ProductDetailMedia({ slug, className }: ProductDetailMediaProps) {
@@ -21,13 +24,13 @@ export default function ProductDetailMedia({ slug, className }: ProductDetailMed
 
   if (!hero && gallery.length === 0) return null;
 
-  const hardwareGallery = gallery.filter((a) => !isTabletSoftwareAsset(a));
-  const tabletGallery = gallery.filter(isTabletSoftwareAsset);
+  const hardwareGallery = gallery.filter((a) => !isTabletGalleryAsset(a));
+  const tabletGallery = gallery.filter(isTabletGalleryAsset);
 
   return (
     <div className={cn("mt-10 space-y-10", className)}>
       {hero ? (
-        <div className="max-w-3xl">
+        <div className="w-full max-w-3xl">
           {slug === "match-10" ? (
             <FloatingImage asset={hero} priority />
           ) : (
@@ -55,7 +58,7 @@ export default function ProductDetailMedia({ slug, className }: ProductDetailMed
           </p>
           <div className="grid gap-6 sm:grid-cols-2 lg:max-w-4xl">
             {tabletGallery.map((asset) => (
-              <GlowImage key={asset.src} asset={asset} sizes={imageSizes.half} telemetryGlow />
+              <GlowImage key={asset.src} asset={asset} sizes={imageSizes.half} telemetryGlow uniformFrame />
             ))}
           </div>
         </div>

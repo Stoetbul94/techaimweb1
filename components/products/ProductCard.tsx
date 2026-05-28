@@ -3,6 +3,7 @@ import ProductImage from "@/components/media/ProductImage";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getProductImage } from "@/lib/imageRegistry";
+import { productDisplayAspect } from "@/lib/image-utils";
 import type { Product } from "@/lib/products";
 
 interface ProductCardProps {
@@ -18,7 +19,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         <ProductImage asset={imageAsset} variant="card" glowOnHover />
       ) : (
         <div
-          className="aspect-video grid place-items-center border-b border-brand-border bg-brand-panel text-sm text-brand-text-body"
+          className={`${productDisplayAspect} grid w-full place-items-center border-b border-brand-border bg-brand-panel text-sm text-brand-text-body`}
           aria-label={`${product.name} image placeholder`}
         >
           Product Image

@@ -59,6 +59,7 @@ export const images = {
       hero: entry("products/ta10-pro/ta10-pro-front", "TA10 Pro precision electronic target system"),
     },
     ta50: {
+      front: entry("products/ta50/ta50-front", "Match 50 electronic target — front view"),
       dashboardTablet: entry(
         "products/ta50/ta50-dashboard-tablet",
         "Match 50 system — range dashboard on tablet",
@@ -87,7 +88,7 @@ export const images = {
 /** Maps site product slugs to hero/card image assets (TA10 → Match 10, TA50 → Match 50) */
 export const productSlugImageMap: Partial<Record<string, ImageAsset>> = {
   "match-10": images.products.ta10Pro.front,
-  "match-50": images.products.ta50.dashboardTablet,
+  "match-50": images.products.ta50.front,
 };
 
 /** Secondary images on product detail pages (hardware + tablet software UI) */
@@ -97,6 +98,7 @@ export const productSlugGalleryMap: Partial<Record<string, ImageAsset[]>> = {
     images.software.dashboardTabletBlackTarget,
     images.software.dashboardTabletBlueTarget,
   ],
+  "match-50": [images.products.ta50.dashboardTablet],
 };
 
 export function getProductImage(slug: string): ImageAsset | undefined {

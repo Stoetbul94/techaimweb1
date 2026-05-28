@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ConversionStrip from "@/components/layout/ConversionStrip";
 import HowItWorks from "@/components/sections/HowItWorks";
 import Hero from "@/components/sections/Hero";
+import FeaturedMatch50Video from "@/components/sections/FeaturedMatch50Video";
 import ProductOverview from "@/components/sections/ProductOverview";
 import WhyTechAimArms from "@/components/sections/WhyTechAimArms";
 import AnalyticsShowcase from "@/components/sections/AnalyticsShowcase";
@@ -19,6 +20,7 @@ export default function HomePage() {
       <HowItWorks />
       <WhyTechAimArms />
       <ProductOverview />
+      <FeaturedMatch50Video />
       <AnalyticsShowcase />
       <ConversionStrip />
     </main>
